@@ -1,0 +1,9 @@
+{
+  "network": "somnia-testnet",
+  "chainId": 50312,
+  "contracts": {
+    "CrossGuardInsuranceNative": "0x03acf2A8D1AA62d24B54B46041B75b0e3ceC02aC"
+  },
+  "deployer": "0x8452666365e6e53c2Eed08873E61272E76c41758",
+  "timestamp": "2025-09-18T12:53:54.051Z"
+}

@@ -1,0 +1,273 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 1980s VINTAGE STYLING - NO ROUNDED CORNERS */
+* {
+  border-radius: 0 !important;
+}
+
+:root {
+  /* 1980s Matte & Light Color Palette */
+  --matte-rose: #D4A5A5;
+  --soft-blue: #A8C4D4;
+  --pale-lavender: #C8B6DB;
+  --sage-green: #B8C9B8;
+  --peach: #FFD4B2;
+  --cream: #FFF8E7;
+  --dusty-purple: #9A8C98;
+  --powder-blue: #B8D4DE;
+  --blush: #F4C2C2;
+  
+  /* Base Colors */
+  --primary-black: #2C2C2C;
+  --primary-white: #FAFAFA;
+  --vintage-beige: #F5E6D3;
+  --light-gray: #E8E8E8;
+  --warm-gray: #D4D4D4;
+  --border-width: 2px;
+  
+  /* Functional Colors */
+  --danger-red: #C97575;
+  --warning-orange: #D4A574;
+  --warning-yellow: #E8D5B7;
+  --success-green: #A8C4A2;
+}
+
+/* Background Pattern */
+body {
+  font-family: 'Courier New', monospace;
+  background: linear-gradient(180deg, var(--vintage-beige) 0%, var(--light-gray) 100%);
+  background-attachment: fixed;
+  color: var(--primary-black);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 10px,
+      rgba(0, 0, 0, 0.02) 10px,
+      rgba(0, 0, 0, 0.02) 11px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 10px,
+      rgba(0, 0, 0, 0.02) 10px,
+      rgba(0, 0, 0, 0.02) 11px
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 1980s RETRO COMPONENTS - Matte Style */
+.vintage-container {
+  border: 3px solid var(--warm-gray);
+  background: var(--primary-white);
+  padding: 2rem;
+  box-shadow: 4px 4px 0 var(--light-gray);
+  position: relative;
+  z-index: 2;
+}
+
+.vintage-button {
+  background: var(--primary-black);
+  color: var(--primary-white);
+  border: 2px solid var(--primary-black);
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Courier New', monospace;
+  box-shadow: 3px 3px 0 var(--warm-gray);
+  position: relative;
+}
+
+.vintage-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0 var(--warm-gray);
+  background: var(--dusty-purple);
+}
+
+.vintage-button:active {
+  transform: translateY(0);
+  box-shadow: 1px 1px 0 var(--warm-gray);
+}
+
+.vintage-input {
+  border: 2px solid var(--warm-gray);
+  padding: 0.75rem;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  background: var(--primary-white);
+  color: var(--primary-black);
+  width: 100%;
+}
+
+.vintage-input:focus {
+  outline: none;
+  border-color: var(--dusty-purple);
+  box-shadow: 0 0 0 1px var(--dusty-purple);
+}
+
+.vintage-input::placeholder {
+  color: var(--warm-gray);
+  opacity: 0.8;
+}
+
+/* RISK SCORE STYLES - Matte */
+.risk-critical {
+  background: var(--danger-red) !important;
+  color: var(--primary-white) !important;
+  border: 2px solid var(--primary-black) !important;
+}
+
+.risk-high {
+  background: var(--warning-orange) !important;
+  color: var(--primary-white) !important;
+  border: 2px solid var(--primary-black) !important;
+}
+
+.risk-medium {
+  background: var(--warning-yellow) !important;
+  color: var(--primary-black) !important;
+  border: 2px solid var(--primary-black) !important;
+}
+
+.risk-low {
+  background: var(--success-green) !important;
+  color: var(--primary-black) !important;
+  border: 2px solid var(--primary-black) !important;
+}
+
+/* 1980s RETRO TABLE - Matte */
+.vintage-table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 2px solid var(--primary-black);
+  background: var(--primary-white);
+}
+
+.vintage-table th,
+.vintage-table td {
+  border: 1px solid var(--warm-gray);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.vintage-table th {
+  background: var(--primary-black);
+  color: var(--primary-white);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.vintage-table tr:nth-child(even) {
+  background: var(--light-gray);
+}
+
+.vintage-table tr:hover {
+  background: var(--vintage-beige);
+}
+
+/* 1980s RETRO CARD - Matte */
+.vintage-card {
+  border: 2px solid var(--primary-black);
+  background: var(--primary-white);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 4px 4px 0 var(--warm-gray);
+  position: relative;
+}
+
+/* 1980s RETRO HEADER - Matte */
+.vintage-header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: var(--primary-black);
+  border-bottom: 3px solid var(--primary-black);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* 1980s TERMINAL STYLE - Matte */
+.terminal-window {
+  background: var(--primary-black);
+  color: var(--sage-green);
+  font-family: 'Courier New', monospace;
+  padding: 1rem;
+  border: 2px solid var(--warm-gray);
+  min-height: 200px;
+}
+
+.terminal-prompt::before {
+  content: "$ ";
+  color: var(--sage-green);
+}
+
+/* 1980s LOADING ANIMATION - Matte */
+@keyframes vintage-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.vintage-loading {
+  animation: vintage-blink 1s infinite;
+}
+
+/* RETRO GRID BACKGROUND */
+.retro-grid {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* NO SMOOTH SCROLLING - VINTAGE FEEL */
+html {
+  scroll-behavior: auto !important;
+}
+
+/* Custom scrollbar for 1980s feel */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+  border: 1px solid var(--warm-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dusty-purple);
+  border: 1px solid var(--primary-black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-black);
+}

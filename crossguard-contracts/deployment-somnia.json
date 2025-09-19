@@ -1,0 +1,10 @@
+{
+  "network": "somnia-testnet",
+  "chainId": 50312,
+  "contracts": {
+    "CrossGuardInsurance": "0x45B29955CEa195d9c1664e8F4628041503B0d11A"
+  },
+  "deployer": "0x8452666365e6e53c2Eed08873E61272E76c41758",
+  "timestamp": "2025-09-18T09:35:06.201Z",
+  "blockNumber": 179472351
+}

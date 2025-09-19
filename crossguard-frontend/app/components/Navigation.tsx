@@ -232,7 +232,7 @@ export default function Navigation({ onAccountChange }: NavigationProps = {}) {
                   >
                     <div className="flex items-center gap-2">
                       <span>{account.slice(0, 4)}...{account.slice(-3)}</span>
-                      <span className="text-xs">{isCorrectNetwork ? '●' : '⚠'}</span>
+                      <span className="text-xs">{isCorrectNetwork ? 'OK' : 'ERR'}</span>
                     </div>
                   </button>
                 )}

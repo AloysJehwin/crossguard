@@ -317,7 +317,7 @@ export default function MonitoringDashboard() {
 
       {/* Live Monitoring Note */}
       <div className="mt-8 p-4 bg-yellow-50 border-2 border-yellow-600">
-        <p className="font-bold">📊 Live Blockchain Data</p>
+        <p className="font-bold">Live Blockchain Data</p>
         <p className="text-sm mt-1">
           This dashboard shows real insurance policies from the CrossGuard contract on Somnia testnet.
           Data is fetched directly from the blockchain.

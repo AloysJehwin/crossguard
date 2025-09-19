@@ -373,7 +373,7 @@ export default function InsurancePurchase() {
       {/* Wallet Status */}
       {!isConnected ? (
         <div className="mb-6 p-4 bg-yellow-50 border-2 border-yellow-500">
-          <p className="font-bold text-yellow-800">⚠ NO WALLET CONNECTED</p>
+          <p className="font-bold text-yellow-800">NO WALLET CONNECTED</p>
           <p className="text-sm mt-1">Please connect your wallet using the button in the top right corner</p>
         </div>
       ) : (
@@ -486,7 +486,7 @@ export default function InsurancePurchase() {
       {/* Success Message */}
       {purchaseSuccess && (
         <div className="mb-6 p-4 border-3 border-green-600 bg-green-50">
-          <p className="text-green-600 font-bold text-lg mb-3">✅ INSURANCE PURCHASED SUCCESSFULLY!</p>
+          <p className="text-green-600 font-bold text-lg mb-3">INSURANCE PURCHASED SUCCESSFULLY!</p>
           
           <div className="bg-white p-3 border-2 border-green-400">
             {policyId && (
@@ -542,7 +542,7 @@ export default function InsurancePurchase() {
       {/* Transaction Info */}
       {isProcessing && (
         <div className="mt-4 p-4 bg-yellow-50 border-3 border-yellow-600">
-          <p className="font-bold text-lg mb-2">🔄 Transaction Processing...</p>
+          <p className="font-bold text-lg mb-2">Transaction Processing...</p>
           <p className="text-sm mb-3">Please confirm in your wallet and wait for confirmation</p>
           
           {txHash && (
@@ -557,15 +557,15 @@ export default function InsurancePurchase() {
                   rel="noopener noreferrer"
                   className="text-xs underline text-blue-600 hover:text-blue-800"
                 >
-                  Track on Explorer →
+                  Track on Explorer
                 </a>
               </div>
             </div>
           )}
           
           <div className="mt-3 text-xs text-gray-600">
-            <p>• Waiting for blockchain confirmation...</p>
-            <p>• This may take 10-30 seconds</p>
+            <p>Waiting for blockchain confirmation...</p>
+            <p>This may take 10-30 seconds</p>
           </div>
         </div>
       )}

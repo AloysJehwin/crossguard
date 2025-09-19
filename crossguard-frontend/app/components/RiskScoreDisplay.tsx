@@ -43,10 +43,10 @@ export default function RiskScoreDisplay({ score }: RiskScoreDisplayProps) {
         <div className="mt-6 text-left">
           <div className="font-bold uppercase mb-2">Risk Factors:</div>
           <div className="space-y-1 font-mono text-sm">
-            <div>• SMART CONTRACT AGE</div>
-            <div>• CODE COMPLEXITY</div>
-            <div>• TRANSACTION VOLUME</div>
-            <div>• AUDIT STATUS</div>
+            <div>SMART CONTRACT AGE</div>
+            <div>CODE COMPLEXITY</div>
+            <div>TRANSACTION VOLUME</div>
+            <div>AUDIT STATUS</div>
           </div>
         </div>
       </div>

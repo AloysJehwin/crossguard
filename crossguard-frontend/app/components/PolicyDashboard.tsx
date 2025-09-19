@@ -182,7 +182,6 @@ export default function PolicyDashboard() {
         <h3 className="text-2xl font-bold mb-6 uppercase">Your Policies</h3>
         <div className="text-center py-8">
           <div className="mb-4">
-            <div className="text-6xl mb-4">🔒</div>
             <p className="text-lg font-bold mb-2">No Wallet Connected</p>
             <p className="text-sm text-gray-600">Please connect your wallet using the button in the top right corner</p>
             <p className="text-xs text-gray-500 mt-2">Your insurance policies will appear here once connected</p>
@@ -234,7 +233,6 @@ export default function PolicyDashboard() {
         </div>
       ) : policies.length === 0 ? (
         <div className="text-center py-12 bg-gray-50 border-2 border-dashed border-gray-300">
-          <div className="text-4xl mb-4">📄</div>
           <p className="font-bold text-lg mb-2">No Policies Found</p>
           <p className="text-sm text-gray-600">
             Purchase insurance to protect your smart contracts
@@ -297,15 +295,15 @@ export default function PolicyDashboard() {
                   <div>
                     <p className="text-xs font-bold uppercase mb-1">Risk Category</p>
                     <p className="font-bold">
-                      {riskLevel === 'LOW' && '🟢 LOW RISK'}
-                      {riskLevel === 'MEDIUM' && '🟡 MEDIUM RISK'}
-                      {riskLevel === 'HIGH' && '🔴 HIGH RISK'}
+                      {riskLevel === 'LOW' && 'LOW RISK'}
+                      {riskLevel === 'MEDIUM' && 'MEDIUM RISK'}
+                      {riskLevel === 'HIGH' && 'HIGH RISK'}
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-bold uppercase mb-1">Protection Status</p>
                     <p className="font-bold">
-                      {policy.status === 'ACTIVE' ? '✅ PROTECTED' : '❌ NOT ACTIVE'}
+                      {policy.status === 'ACTIVE' ? 'PROTECTED' : 'NOT ACTIVE'}
                     </p>
                   </div>
                   <div>

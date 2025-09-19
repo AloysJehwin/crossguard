@@ -43,7 +43,7 @@ export default function TransactionChecker() {
           data: tx.data?.slice(0, 66) + '...' // Truncate data
         },
         receipt: receipt ? {
-          status: receipt.status === 1 ? '✅ Success' : '❌ Failed',
+          status: receipt.status === 1 ? 'Success' : 'Failed',
           blockNumber: receipt.blockNumber,
           blockHash: receipt.blockHash,
           gasUsed: receipt.gasUsed?.toString(),
@@ -171,7 +171,7 @@ export default function TransactionChecker() {
                 rel="noopener noreferrer"
                 className="text-blue-600 underline text-sm"
               >
-                {explorer.name} →
+                {explorer.name}
               </a>
             </div>
           ))}

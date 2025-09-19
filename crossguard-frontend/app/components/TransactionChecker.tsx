@@ -31,7 +31,7 @@ export default function TransactionChecker() {
       // Get transaction receipt
       const receipt = await provider.getTransactionReceipt(txHash)
       
-      const data = {
+      const data: any = {
         transaction: {
           hash: tx.hash,
           from: tx.from,
@@ -53,8 +53,6 @@ export default function TransactionChecker() {
         } : null
       }
       
-      setTxData(data)
-      
       // Try to decode if it's an insurance purchase
       if (tx.to === '0x03acf2A8D1AA62d24B54B46041B75b0e3ceC02aC') {
         try {
@@ -75,6 +73,8 @@ export default function TransactionChecker() {
           console.log('Could not decode as insurance purchase')
         }
       }
+      
+      setTxData(data)
       
     } catch (err: any) {
       console.error('Error:', err)

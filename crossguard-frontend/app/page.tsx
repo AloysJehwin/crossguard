@@ -77,22 +77,22 @@ export default function LandingPage() {
         <div className="vintage-card">
           <h3 className="text-xl font-bold mb-4 uppercase">Real-Time Detection</h3>
           <ul className="space-y-2 font-mono text-sm">
-            <li>• REENTRANCY ATTACKS</li>
-            <li>• ORACLE MANIPULATION</li>
-            <li>• FLASH LOAN EXPLOITS</li>
-            <li>• ACCESS CONTROL ISSUES</li>
-            <li>• INTEGER OVERFLOWS</li>
+            <li>- REENTRANCY ATTACKS</li>
+            <li>- ORACLE MANIPULATION</li>
+            <li>- FLASH LOAN EXPLOITS</li>
+            <li>- ACCESS CONTROL ISSUES</li>
+            <li>- INTEGER OVERFLOWS</li>
           </ul>
         </div>
         
         <div className="vintage-card">
           <h3 className="text-xl font-bold mb-4 uppercase">Insurance Coverage</h3>
           <ul className="space-y-2 font-mono text-sm">
-            <li>• RISK-BASED PRICING</li>
-            <li>• SOMNIA TESTNET DEPLOYMENT</li>
-            <li>• INSTANT CLAIMS PROCESSING</li>
-            <li>• UP TO $10M COVERAGE</li>
-            <li>• 24/7 MONITORING</li>
+            <li>- RISK-BASED PRICING</li>
+            <li>- SOMNIA TESTNET DEPLOYMENT</li>
+            <li>- INSTANT CLAIMS PROCESSING</li>
+            <li>- UP TO $10M COVERAGE</li>
+            <li>- 24/7 MONITORING</li>
           </ul>
         </div>
       </section>

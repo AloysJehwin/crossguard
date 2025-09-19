@@ -204,7 +204,7 @@ export default function InsurancePurchase() {
       const network = await provider.getNetwork()
       console.log('Connected to network:', network.chainId)
       
-      if (network.chainId !== 50312n) {
+      if (network.chainId !== BigInt(50312)) {
         setError('Wrong network! Please switch to Somnia Testnet (Chain ID: 50312)')
         setIsProcessing(false)
         return
@@ -260,7 +260,7 @@ export default function InsurancePurchase() {
       })
       
       // Try to estimate gas but don't fail if estimation fails
-      let estimatedGas = 5000000n // Default gas limit
+      let estimatedGas = BigInt(5000000) // Default gas limit
       try {
         estimatedGas = await contract.purchaseInsurance.estimateGas(
           targetProtocol,

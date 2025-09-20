@@ -1,0 +1,489 @@
+{
+	"info": {
+		"_postman_id": "12345678-1234-1234-1234-123456789012",
+		"name": "CrossGuard API",
+		"description": "Smart Contract Vulnerability Scanner API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Scan Endpoints",
+			"item": [
+				{
+					"name": "Get Supported Networks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/scan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scan"
+							]
+						},
+						"description": "Returns a list of all supported blockchain networks for contract scanning.\n\n**Response Fields:**\n- `network`: Network identifier\n- `name`: Display name of the network\n- `chain_id`: Chain ID\n- `explorer_url`: Block explorer URL\n- `api_configured`: Whether API key is configured"
+					},
+					"response": []
+				},
+				{
+					"name": "Scan Contract",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contract_address\": \"0x1234567890123456789012345678901234567890\",\n    \"network\": \"ethereum\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scan"
+							]
+						},
+						"description": "Analyzes a smart contract for vulnerabilities and calculates risk scores.\n\n**Request Body:**\n- `contract_address` (required): The contract address to scan\n- `network` (optional): Network to scan on (default: 'ethereum')\n\n**Response Fields:**\n- `overall_risk_score`: Overall risk score (0-100)\n- `risk_level`: Risk level category\n- `vulnerabilities`: Detailed vulnerability analysis\n- `recommendations`: Security recommendations\n- `insurance_eligible`: Insurance eligibility\n- `suggested_coverage`: Suggested coverage amount\n- `premium_estimate`: Estimated premium rate"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Examples - Ethereum",
+			"item": [
+				{
+					"name": "Scan USDC on Ethereum",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contract_address\": \"0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48\",\n    \"network\": \"ethereum\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scan"
+							]
+						},
+						"description": "Example: Scan USDC stablecoin contract on Ethereum mainnet\n\nContract: USDC (USD Coin)\nAddress: 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+					},
+					"response": []
+				},
+				{
+					"name": "Scan WETH on Ethereum",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contract_address\": \"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2\",\n    \"network\": \"ethereum\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scan"
+							]
+						},
+						"description": "Example: Scan WETH contract on Ethereum\n\nContract: Wrapped Ether (WETH)\nAddress: 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Examples - Layer 2",
+			"item": [
+				{
+					"name": "Scan USDC on Polygon",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contract_address\": \"0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174\",\n    \"network\": \"polygon\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scan"
+							]
+						},
+						"description": "Example: Scan USDC on Polygon\n\nContract: USDC\nAddress: 0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
+					},
+					"response": []
+				},
+				{
+					"name": "Scan WETH on Arbitrum",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contract_address\": \"0x82aF49447D8a07e3bd95BD0d56f35241523fBab1\",\n    \"network\": \"arbitrum\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scan"
+							]
+						},
+						"description": "Example: Scan WETH on Arbitrum\n\nContract: Wrapped Ether\nAddress: 0x82aF49447D8a07e3bd95BD0d56f35241523fBab1"
+					},
+					"response": []
+				},
+				{
+					"name": "Scan DAI on Optimism",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contract_address\": \"0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1\",\n    \"network\": \"optimism\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scan"
+							]
+						},
+						"description": "Example: Scan DAI on Optimism\n\nContract: DAI Stablecoin\nAddress: 0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1"
+					},
+					"response": []
+				},
+				{
+					"name": "Scan USDC on Base",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contract_address\": \"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913\",\n    \"network\": \"base\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scan"
+							]
+						},
+						"description": "Example: Scan USDC on Base\n\nContract: USDC\nAddress: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Examples - Other Chains",
+			"item": [
+				{
+					"name": "Scan WAVAX on Avalanche",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contract_address\": \"0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7\",\n    \"network\": \"avalanche\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scan"
+							]
+						},
+						"description": "Example: Scan WAVAX on Avalanche\n\nContract: Wrapped AVAX\nAddress: 0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7"
+					},
+					"response": []
+				},
+				{
+					"name": "Scan BUSD on BSC",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contract_address\": \"0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56\",\n    \"network\": \"bsc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scan"
+							]
+						},
+						"description": "Example: Scan BUSD on BSC\n\nContract: Binance USD\nAddress: 0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Error Test Cases",
+			"item": [
+				{
+					"name": "Test - Empty Contract Address",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contract_address\": \"\",\n    \"network\": \"ethereum\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scan"
+							]
+						},
+						"description": "Test error handling for empty contract address\n\nExpected: 400 Bad Request\nError: 'Contract address is required'"
+					},
+					"response": []
+				},
+				{
+					"name": "Test - Missing Request Body",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scan"
+							]
+						},
+						"description": "Test error handling for missing request body\n\nExpected: 400 Bad Request"
+					},
+					"response": []
+				},
+				{
+					"name": "Test - Invalid Network",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contract_address\": \"0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48\",\n    \"network\": \"invalid_network\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scan"
+							]
+						},
+						"description": "Test behavior with invalid network name\n\nExpected: Falls back to 'ethereum' network"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
